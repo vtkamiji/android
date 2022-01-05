@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Primeiro App</string>
+    <string name="botao_nome">Cadastrar.nome</string>
+</resources>
