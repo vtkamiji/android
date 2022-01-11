@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ public class Resultado extends AppCompatActivity {
 
     private ImageView caraCoroaImagem;
     private TextView resultado;
+    private Button btVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class Resultado extends AppCompatActivity {
 
         caraCoroaImagem = findViewById(R.id.caraCoroaImagem);
         resultado = findViewById(R.id.txtResultado);
+        btVoltar = findViewById(R.id.btVoltar);
 
         Bundle dados = getIntent().getExtras();
         String caraOuCoroa = dados.get("resultado").toString();
@@ -33,9 +36,12 @@ public class Resultado extends AppCompatActivity {
             caraCoroaImagem.setImageResource(R.drawable.moeda_coroa);
             resultado.setText("COROA");
         }
-    }
 
-    public void voltar(View view) {
-        
+        btVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
